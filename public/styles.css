@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+
+body {
+  margin:0;
+  min-height: 100vh;
+  font-family: 'Alegreya', serif;
+  background-color: rgb(110, 76, 145);
+}
