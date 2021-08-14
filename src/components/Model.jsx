@@ -8,12 +8,19 @@ const Model = props => {
   const model = useLoader(
     GLTFLoader,
     props.path
-  )
+  );
 
-  let mixer
+  const mixer = new THREE.AnimationMixer(model.scene);
+  let modelReady = false;
+  let actions = [];
+  let activeAction;
+  let lastAction;
+
+  actions.push(mixer.clipAction())
+
   if (model.animations.length > 0) {
-    mixer = new THREE.AnimationMixer(model.scene)
-    model.animation.forEach(clip => {
+    const action = mixer.clipAction;
+    model.animations.forEach(clip => {
       const action = mixer.clipAction(clip)
       action.play()
     })
@@ -24,14 +31,17 @@ const Model = props => {
   })
 
   console.log(props.path, model)
-  model.scene.traverse(child => {
-    if (child.isMesh) {
-      child.castShadow = true;
-    }
-  })
+
+  // model.scene.traverse(child => {
+  //   if (child.isMesh) {
+  //     child.castShadow = true;
+  //   }
+  // })
 
   return (
-    <primitive object={model.scene} />
+    <primitive
+      object={model.scene}
+      scale={props.scale} />
   )
 }
 
