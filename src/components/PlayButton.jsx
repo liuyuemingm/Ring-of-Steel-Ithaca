@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core'
 import * as THREE from 'three'
 
 function PlayButton() {
-  // const mixer = new THREE.AnimationMixer();
+
 
 
 }

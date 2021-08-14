@@ -11,37 +11,47 @@ const Model = props => {
   );
 
   const mixer = new THREE.AnimationMixer(model.scene);
-  let modelReady = false;
+  const clips = model.animations;
+
   let actions = [];
-  let activeAction;
-  let lastAction;
+  clips.forEach(clip => {
+    actions.push(mixer.clipAction(clip));
+  })
 
-  actions.push(mixer.clipAction())
+  let activeAction = actions[0];
+  let lastAction = actions[0];
 
-  if (model.animations.length > 0) {
-    const action = mixer.clipAction;
-    model.animations.forEach(clip => {
-      const action = mixer.clipAction(clip)
-      action.play()
-    })
+  const setAction = (toAction) => {
+    if (toAction != activeAction) {
+      lastAction = activeAction
+      activeAction = toAction
+      //lastAction.stop()
+      lastAction.fadeOut(0.3)
+      activeAction.reset()
+      activeAction.fadeIn(0.3)
+      activeAction.play()
+    }
   }
 
   useFrame((scene, delta) => {
     mixer?.update(delta)
   })
 
-  console.log(props.path, model)
+  setTimeout(() => { setAction(actions[2]) }, 1000);
 
-  // model.scene.traverse(child => {
-  //   if (child.isMesh) {
-  //     child.castShadow = true;
-  //   }
-  // })
+  console.log(actions)
+
+  model.scene.traverse(child => {
+    if (child.isMesh) {
+      child.castShadow = true;
+    }
+  })
 
   return (
     <primitive
       object={model.scene}
-      scale={props.scale} />
+      scale={props.scale}
+    />
   )
 }
 
