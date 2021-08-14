@@ -4,10 +4,10 @@ import { Canvas } from '@react-three/fiber';
 import Orbit from './Orbit';
 import Floor from './Floor';
 import Box from './Box';
-// import Model from './Model';
+import Model from './Model';
 import Bulb from './Bulb';
 import { Plane } from '@react-three/drei';
-import { Model } from './Parry_1'
+// import { Model } from './Parry_1'
 import { Slider } from '@material-ui/core'
 import PlayAni from './PlayAni';
 import { Vector3 } from 'three';
@@ -27,7 +27,8 @@ function Drills() {
 
         <axesHelper args={[5]} />
         <Suspense fallback={null}>
-          <Model scale={new Array(3).fill(10)} />
+          <Model scale={new Array(3).fill(10)}
+            path='models/animationTest.glb' />
         </Suspense>
         <ambientLight intensity={0.3} shadow />
 
@@ -38,8 +39,8 @@ function Drills() {
         {/* https://www.youtube.com/watch?v=fdtqqyeKRJk&t=2251s*/}
         {/* <Box /> */}
         <Orbit />
-        <PlayAni />
-        {/* <Model /> */}
+        {/* <PlayAni /> */}
+        {/* <Model path='mannequin_anatomy_aid_free_download/scene.gltf' /> */}
         {/* <Bulb /> */}
       </Canvas>
 
