@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
+export default class testing extends Component {
 
+  static sayHi() {
+    console.log('hi')
+  }
 
-function testing() {
-  return (
-    <div>
-
-    </div>
-  )
+  render() {
+    return (
+      null
+    )
+  }
 }
-
-export default testing
