@@ -5,20 +5,25 @@ import Drills from "./components/Drills.jsx"
 import PlayButton from "./components/PlayButton.jsx"
 import ThreeScene from "./components/ThreeScene.jsx"
 import { Button } from "@material-ui/core"
+import Home from "./Home.js"
+import About from "./About.js"
+import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 function App() {
-  const clickHandler = () => {
-    console.log(this)
 
-  }
   return (
-    <>
-      <Header />
-      {/* <Drills /> */}
-      <ThreeScene />
-      <PlayButton />
-      <Footer />
-    </>
+    <Router>
+      <div className="App">
+        <ResponsiveDrawer />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+        </Switch>
+
+      </div>
+    </Router>
+
   );
 }
 
