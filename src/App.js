@@ -9,16 +9,20 @@ import Home from "./Home.js"
 import About from "./About.js"
 import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Weapons from "./Weapons.js"
+import Syllabus from "./Syllabus.js"
 
 function App() {
 
   return (
     <Router>
       <div className="App">
-        <ResponsiveDrawer />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/Home" exact component={Home} />
           <Route path="/about" exact component={About} />
+          <Route path="/weapons" exact component={Weapons} />
+          <Route path="/syllabus" exact component={Syllabus} />
+
         </Switch>
 
       </div>

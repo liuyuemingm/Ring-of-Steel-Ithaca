@@ -11,8 +11,11 @@ function Home() {
   }
   return (
     <>
-      <Typography>
-
+      <Typography style={{ position: "absolute", left: '300px', top: '200px' }}>
+        Home Home Home Home Home Home Home Home Home Home Home Home
+        Home Home Home Home Home Home Home Home Home Home Home Home
+        Home Home Home Home Home Home Home Home Home Home Home Home
+        Home Home Home Home Home Home Home Home Home Home Home Home
       </Typography>
     </>
   );
