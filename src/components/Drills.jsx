@@ -41,7 +41,7 @@ function Drills() {
         {/* <Bulb /> */}
 
       </Canvas>
-      <PlayButton />
+      {/* <PlayButton /> */}
     </div >
 
   )

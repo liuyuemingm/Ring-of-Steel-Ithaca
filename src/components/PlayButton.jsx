@@ -1,23 +1,36 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PlayAni from './PlayAni'
 import { Button } from '@material-ui/core'
 import * as THREE from 'three'
 // import { sayHi } from './Model'
 import ThreeScene from './ThreeScene'
-// import testing from './testing'
+import Testing from './testing'
 
+
+window.asdf = 0;
 const PlayButton = props => {
+  const testingRef = useRef();
+
+  // useEffect(() => {
+  //   effect
+
+  // }, [input])
+  const clickhandler = () => {
+    console.log(testingRef);
+  }
 
   return (
     <Button
-      onClick={() => { console.log(document.getElementsByTagName(ThreeScene)) }}
+      onClick={() => { window.asdf++ }}
       style={{
+
         position: 'absolute',
-        bottom: '20vh',
+        bottom: '50vh',
         left: '40vw',
         background: 'purple'
       }}>
-      play button
+      increment window asdf value
+      {/* <Testing ref={testingRef} /> */}
     </Button>
   )
 }

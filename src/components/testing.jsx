@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
 
-export default class testing extends Component {
+export default class Testing extends Component {
 
+  constructor(props) {
+    super(props);
+    this.testingRef = React.createRef();
+    this.value = 5;
+  }
+
+  testing = () => {
+    console.log(this.value)
+  }
   static sayHi() {
     console.log('hi')
   }
 
   render() {
     return (
-      null
+      <div ref={this.testingRef} />
     )
   }
 }

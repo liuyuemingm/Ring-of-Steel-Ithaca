@@ -7,22 +7,16 @@ import ThreeScene from "./components/ThreeScene.jsx"
 import { Button } from "@material-ui/core"
 
 function App() {
-  // onClick = () => {
-  //   console.log(this.threeScene)
-  // }
+  const clickHandler = () => {
+    console.log(this)
+
+  }
   return (
     <>
       <Header />
       {/* <Drills /> */}
       <ThreeScene />
-
-      <Button
-        style={{
-          position: 'absolute',
-          bottom: '20vh',
-          left: '40vw',
-          background: 'purple'
-        }}>click me</Button>
+      <PlayButton />
       <Footer />
     </>
   );
