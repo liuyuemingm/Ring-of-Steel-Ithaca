@@ -8,26 +8,7 @@ function Weapons() {
   return (
     <>
       <ResponsiveDrawer />
-      <Typography >
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-        Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons Weapons
-      </Typography>
+
     </>
   );
 }

@@ -14,12 +14,15 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import { purple } from '@material-ui/core/colors';
 
-const drawerWidth = 240;
+
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
@@ -44,11 +47,14 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+    elevation: 5
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+
   },
+
 }));
 
 function ResponsiveDrawer(props) {
@@ -66,16 +72,16 @@ function ResponsiveDrawer(props) {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {['Home', 'Syllabus', 'Weapons', 'About'].map((text, index) => (
-          <ListItem button key={text}>
-            <Link to={`../${text}`} >
+        {['Home', 'Syllabus', 'Weapons', 'Glossary', 'About'].map((text, index) => (
+          <Link to={`../${text}`} key={text} >
+            <ListItem button >
               <ListItemText primary={text} />
-            </Link>
+            </ListItem>
             <Divider />
-          </ListItem>
+          </Link>
         ))}
       </List>
-      <Divider />
+
     </div >
   );
 
@@ -84,7 +90,7 @@ function ResponsiveDrawer(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} style={{ background: '#7B4F82' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -95,9 +101,9 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Responsive drawerrrrrr
-          </Typography>
+          <p style={{ fontSize: '20px' }}>
+            Ring of Steel Ithaca
+          </p>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
@@ -115,6 +121,7 @@ function ResponsiveDrawer(props) {
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
             }}
+
           >
             {drawer}
           </Drawer>
@@ -124,6 +131,7 @@ function ResponsiveDrawer(props) {
             classes={{
               paper: classes.drawerPaper,
             }}
+            PaperProps={{ elevation: 12 }}
             variant="permanent"
             open
           >
@@ -131,21 +139,16 @@ function ResponsiveDrawer(props) {
           </Drawer>
         </Hidden>
       </nav>
-      {/* <main className={classes.content}>
-        <div className={classes.toolbar} />
 
-      </main> */}
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        {props.children}
+      </main>
 
     </div>
   );
 }
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
 
 export default ResponsiveDrawer;
+export { drawerWidth };

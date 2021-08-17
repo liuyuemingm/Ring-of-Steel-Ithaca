@@ -11,6 +11,7 @@ import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Weapons from "./Weapons.js"
 import Syllabus from "./Syllabus.js"
+import Glossary from "./Glossary.js"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Home" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/weapons" exact component={Weapons} />
+          <Route path="/glossary" exact component={Glossary} />
           <Route path="/syllabus" exact component={Syllabus} />
 
         </Switch>
