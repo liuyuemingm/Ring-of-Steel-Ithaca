@@ -1,14 +1,15 @@
-import { Typography } from "@material-ui/core";
 import Footer from "./components/Footer.jsx"
-import Header from "./components/Header.jsx"
 import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx"
+import WeaponsCarousel from "./components/WeaponsCarousel.jsx"
 
 function Weapons() {
 
   return (
     <>
-      <ResponsiveDrawer />
-
+      <ResponsiveDrawer>
+        <WeaponsCarousel />
+      </ResponsiveDrawer>
+      <Footer />
     </>
   );
 }

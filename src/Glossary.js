@@ -7,10 +7,7 @@ import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx"
 import ThreeScene from "./components/ThreeScene.jsx"
 
 function Syllabus() {
-  const clickHandler = () => {
-    console.log(this)
 
-  }
   return (
     <>
       <ResponsiveDrawer>

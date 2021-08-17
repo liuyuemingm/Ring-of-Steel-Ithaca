@@ -18,7 +18,6 @@ import { purple } from '@material-ui/core/colors';
 import { Paper } from '@material-ui/core';
 import { textAlign } from '@material-ui/system';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
