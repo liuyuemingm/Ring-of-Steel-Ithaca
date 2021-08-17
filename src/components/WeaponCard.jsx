@@ -10,13 +10,14 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles((theme) => ({
 
   root: {
-    position: 'relative',
-    width: '100%',
-    margin: '0 0 15px',
+    // position: 'relative',
+    // width: '100%',
+    margin: '15px 10px',
     padding: '0',
     background: 'black',
-    overflow: 'hidden',
-    breakInside: 'avoid',
+    borderRadius: '15px',
+    // overflow: 'hidden',
+    // breakInside: 'avoid',
     transition: '0.5s',
     fontSize: '16px',
     color: 'white',
@@ -32,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+
+
+
   content: {
     transition: '0.5s',
     // visibility: 'hidden'
@@ -42,29 +46,35 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
+const styles = {
+  small: {
+    gridRowEnd: 'span 28'
+  },
+  medium: {
+    gridRowEnd: 'span 33'
+  },
+  large: {
+    gridRowEnd: 'span 40'
+  },
+}
 function WeaponCard(props) {
 
   const classes = useStyles();
 
   return (
 
-    <Card className={classes.root}>
-      <CardMedia
-        component="img"
-        alt="weapon"
-        image={props.path}
-      >
-      </CardMedia>
-      <Paper className={classes.content} style={{ bottom: '0', position: 'absolute', width: '100%' }}>
+    <Card className={classes.root} style={{ ...styles[props.size] }}>
+      <CardMedia image={props.path} style={{ paddingBottom: '150%', height: '100%' }} />
+      {/* <image src={props.path} /> */}
+      <div className={classes.content} style={{ position: 'relative', bottom: '70px' }}>
         <h3 style={{ margin: '5px' }}>
-          Weapon 1
+          {props.path}
         </h3>
         <p style={{ margin: '10px 0 0 0' }}>
           link1
           link2
         </p>
-      </Paper>
+      </div>
     </Card >
 
   )
