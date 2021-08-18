@@ -14,19 +14,7 @@ const useStyles = makeStyles((theme) => ({
     // gridAutoRows: '5px',
     justifyContent: 'center',
 
-    // responsive
-    // '@media(max-width:1350px)': {
-    //   columns: '5',
-    // },
-    // '@media(max-width:1100px)': {
-    //   columns: '4',
-    // },
-    // '@media(max-width:900px)': {
-    //   columns: '3',
-    // },
-    // '@media(max-width:500px)': {
-    //   columns: '2',
-    // },
+
   },
 }));
 

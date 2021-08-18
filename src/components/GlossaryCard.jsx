@@ -5,45 +5,49 @@ import { Paper } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
-    width: '200px',
     height: 'auto',
-    maxHeight: '68px',
-    margin: '10px',
-    display: 'inline-block',
+    margin: '10px 10px 20px',
+    padding: '0 25px 0 0',
+    display: 'flex',
     justifyContent: 'flex-start',
-    background: 'purple',
-    textAlign: 'center',
+    background: '#222222',
+    textAlign: 'left',
     transition: '0.3s',
     color: 'white',
     fontSize: '16px',
+    alignItems: 'center',
     '& $h2': {
-      visibility: 'visible'
+      margin: '0 15px 0 50px',
+      // position: 'relativse',
+      width: '150px ',
+      // fontFamily: 'Zengo',
+      letterSpacing: '0.05em',
+      fontWeight: '100',
+      color: '#c08fff',
+      textShadow: '0 0 10px #7000ff'
     },
     '& $p': {
-      visibility: 'hidden',
+      textAlign: 'left',
+      width: '100%',
+      // width: `calc(100%-150px)`,
+      fontFamily: 'sans-serif',
+      opacity: '0.8',
     },
 
-    '&:hover': {
-      width: '420px',
-      maxHeight: '250px',
-      display: 'inline',
+    [theme.breakpoints.down("sm")]: {
+      display: 'block',
       textAlign: 'center',
       '& $h2': {
-        visibility: 'hidden',
-        display: 'none',
+        margin: '0',
+        padding: '15px 0 0',
+        width: '100%',
       },
       '& $p': {
-        visibility: 'visible',
-        textAlign: 'left',
-        padding: '20px',
-        margin: '0',
+        padding: '10px 20px 20px',
+        margin: '0'
       },
+    },
 
-      '&:click': {
-        width: '420px',
-        height: '200px',
-      }
-    }
   },
 
 
@@ -56,16 +60,13 @@ function GlossaryCard(props) {
   const classes = useStyles();
 
   return (
-
-    <Paper elevation={3} className={classes.root} >
-      {props.children}
-      {/* <h2>Volte</h2>
-      <p>A rotation about a central point, performed by leading with the foot opposite the direction being turned in and moving the other foot behind.
-        Voltes are described by the foot leading the motion; a Volte right turns you left, and leaves your right foot in front afterwards.
-        By default, a volte denotes a 90 degree rotation; A demi-volte is a 45 degree rotation, while a grande-volte is a 90 degree rotation.
-        Performed correctly, voltes make it possible to rotate without losing balance. Voltes can also be used as evades, or to supplement binds.</p> */}
-    </Paper>
-
+    <div>
+      <Paper elevation={10} className={classes.root}  >
+        <img src='/images/corner.png' style={{ width: '50px', position: 'absolute', left: '0', top: '0' }} />
+        <img src='/images/corner.png' style={{ width: '50px', position: 'absolute', right: '0', transform: `rotateZ(180deg)`, bottom: '0' }} />
+        {props.children}
+      </Paper>
+    </div>
   )
 }
 
