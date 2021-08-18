@@ -47,13 +47,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const styles = {
-  small: {
+  size0: {
     gridRowEnd: 'span 28'
   },
-  medium: {
+  size1: {
+    gridRowEnd: 'span 28'
+  },
+  size2: {
     gridRowEnd: 'span 33'
   },
-  large: {
+  size3: {
     gridRowEnd: 'span 40'
   },
 }

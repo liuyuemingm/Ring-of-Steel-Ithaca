@@ -14,7 +14,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { purple } from '@material-ui/core/colors';
 
 
 const drawerWidth = 200;
@@ -22,7 +21,6 @@ const drawerWidth = 200;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
@@ -35,7 +33,8 @@ const useStyles = makeStyles((theme) => ({
       // width: `calc(100% - ${drawerWidth}px)`,
       // marginLeft: drawerWidth,
     },
-    zIndex: theme.zIndex.drawer + 1
+    zIndex: theme.zIndex.drawer + 1,
+    backgroundColor: '#181818'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -47,13 +46,13 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    elevation: 5
+    elevation: 5,
+    backgroundColor: '#222222'
   },
   content: {
     flexGrow: 1,
     // width: `calc(100% - ${drawerWidth}px)`,
     // padding: theme.spacing(3),
-
   },
 
 }));
@@ -72,7 +71,7 @@ function ResponsiveDrawer(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
+      <List style={{ position: 'absolute', top: '120px', width: '100%' }}>
         {['Home', 'Syllabus', 'Weapons', 'Glossary', 'About'].map((text, index) => (
           <Link to={`../${text}`} key={text} >
             <ListItem button >
@@ -91,7 +90,7 @@ function ResponsiveDrawer(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar} style={{ background: '#7B4F82' }}>
+      <AppBar position="fixed" className={classes.appBar} >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -102,9 +101,9 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <p style={{ fontSize: '20px' }}>
-            Ring of Steel Ithaca
-          </p>
+          <Hidden xsDown implementation="css">
+            <img src='/images/RingItahcaLogo.png' style={{ position: 'absolute', top: '1px', left: '30px', width: '120px' }} />
+          </Hidden>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

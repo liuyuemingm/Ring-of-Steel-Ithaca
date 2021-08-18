@@ -42,20 +42,20 @@ function WeaponsCarousel() {
       <Paper square elevation={3} style={{ height: "520px" }}>hithere4</Paper>
       <Paper square elevation={3} style={{ height: "520px" }}>hithere5</Paper>
       <Paper square elevation={3} style={{ height: "520px" }}>hithere6</Paper> */}
-      <WeaponCard path="/images/weapon1.jpg" size='small' />
-      <WeaponCard path="/images/weapon2.jpg" size='small' />
-      <WeaponCard path="/images/weapon3.jpg" size='medium' />
-      <WeaponCard path="/images/weapon4.jpg" size='large' />
-      <WeaponCard path="/images/weapon5.jpg" size='medium' />
-      <WeaponCard path="/images/weapon6.jpg" size='medium' />
-      <WeaponCard path="/images/weapon7.jpg" size='large' />
-      <WeaponCard path="/images/weapon8.jpg" size='small' />
-      <WeaponCard path="/images/weapon9.jpg" size='medium' />
-      <WeaponCard path="/images/weapon10.jpg" size='large' />
-      <WeaponCard path="/images/weapon1.jpg" size='medium' />
-      <WeaponCard path="/images/weapon2.jpg" size='small' />
-      <WeaponCard path="/images/weapon3.jpg" size='large' />
-      <WeaponCard path="/images/weapon4.jpg" size='medium' />
+      <WeaponCard path="/images/weapon1.jpg" size='size0' />
+      <WeaponCard path="/images/weapon2.jpg" size='size2' />
+      <WeaponCard path="/images/weapon3.jpg" size='size1' />
+      <WeaponCard path="/images/weapon4.jpg" size='size0' />
+      <WeaponCard path="/images/weapon5.jpg" size='size3' />
+      <WeaponCard path="/images/weapon6.jpg" size='size2' />
+      <WeaponCard path="/images/weapon7.jpg" size='size1' />
+      <WeaponCard path="/images/weapon8.jpg" size='size3' />
+      <WeaponCard path="/images/weapon9.jpg" size='size3' />
+      <WeaponCard path="/images/weapon10.jpg" size='size' />
+      <WeaponCard path="/images/weapon1.jpg" size='size0' />
+      <WeaponCard path="/images/weapon2.jpg" size='size3' />
+      <WeaponCard path="/images/weapon3.jpg" size='size2' />
+      <WeaponCard path="/images/weapon4.jpg" size='size1' />
 
 
 

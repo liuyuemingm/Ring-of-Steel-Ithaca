@@ -6,11 +6,14 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import { Card } from '@material-ui/core';
 import GlossaryCard from './GlossaryCard';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+
 
 const Accordion = withStyles({
   root: {
     border: '1px solid rgba(0, 0, 0, .125)',
     boxShadow: 'none',
+    backgroundColor: '#252525',
     '&:not(:last-child)': {
       borderBottom: 0,
     },
@@ -25,14 +28,16 @@ const Accordion = withStyles({
 })(MuiAccordion);
 
 const AccordionSummary = withStyles({
+
   root: {
-    backgroundColor: 'rgba(0, 0, 0, .03)',
+    backgroundColor: '#222222',
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
     marginBottom: -1,
-    minHeight: 45,
+    minHeight: 60,
     '&$expanded': {
-      minHeight: 45,
+      minHeight: 60,
     },
+
   },
   content: {
     '&$expanded': {
@@ -45,8 +50,64 @@ const AccordionSummary = withStyles({
 const AccordionDetails = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
+    color: 'white',
+    background: '#303030'
   },
 }))(MuiAccordionDetails);
+
+const useStyles = makeStyles((theme) => ({
+  title0: {
+    margin: '7px 30px 0',
+    width: '10px',
+    position: 'absolute',
+    left: '65px'
+  },
+  title1: {
+    margin: '7px 30px 0',
+    width: '10px',
+    position: 'absolute',
+    left: '125px'
+  },
+  title2: {
+    margin: '7px 30px 0',
+    width: '10px',
+    position: 'absolute',
+    left: '175px'
+  },
+
+  arwHead: {
+    width: '30px',
+    position: 'relative',
+    top: '4px',
+    left: '15px',
+    transition: '0.3s',
+  },
+
+  arwTail: {
+    width: '280px',
+    position: 'absolute',
+    top: '16px',
+    left: '-280px',
+    transition: '0.3s',
+  },
+
+  summaryBar: {
+    textShadow: '0 0 10px #7000ff, 0 0 10px #7000ff',
+    color: '#C08FFF',
+    fontFamily: 'Zengo',
+    fontSize: '45px',
+    lineHeight: '20px',
+    '&:hover': {
+      '& $arwHead': {
+        left: '250px',
+      },
+      '& $arwTail': {
+        left: '0px',
+      }
+    }
+  }
+}
+))
 
 export default function CustomizedAccordions() {
   const [expanded, setExpanded] = React.useState('panel1');
@@ -54,49 +115,49 @@ export default function CustomizedAccordions() {
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
+  const classes = useStyles();
+
+  function accorSum(first, last) {
+    return (
+      <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" className={classes.summaryBar}>
+        <img src='images/arwHead.png' className={classes.arwHead} />
+        <img src='images/arwTail.png' className={classes.arwTail} />
+        <p className={classes.title0}>{first}</p> <p className={classes.title1}>~</p> <p className={classes.title2}>{last}</p>
+      </AccordionSummary>)
+  }
 
   return (
     <div>
       <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <p style={{ fontSize: '26px', fontWeight: '500', lineHeight: '20px', margin: '0' }}>A - E</p>
-        </AccordionSummary>
+        {accorSum('A', 'E')}
         <AccordionDetails>
           <GlossaryCard />
         </AccordionDetails>
       </Accordion>
 
       <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <p style={{ fontSize: '26px', fontWeight: '500', lineHeight: '20px', margin: '0' }}>F - J</p>
-        </AccordionSummary>
+        {accorSum('F', 'J')}
         <AccordionDetails>
           <Card />
         </AccordionDetails>
       </Accordion>
 
       <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <p style={{ fontSize: '26px', fontWeight: '500', lineHeight: '20px', margin: '0' }}>K - O</p>
-        </AccordionSummary>
+        {accorSum('K', 'O')}
         <AccordionDetails>
           <Card />
         </AccordionDetails>
       </Accordion>
 
       <Accordion square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <p style={{ fontSize: '26px', fontWeight: '500', lineHeight: '20px', margin: '0' }}>P - T</p>
-        </AccordionSummary>
+        {accorSum('P', 'T')}
         <AccordionDetails>
           <Card />
         </AccordionDetails>
       </Accordion>
 
       <Accordion square expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <p style={{ fontSize: '26px', fontWeight: '500', lineHeight: '20px', margin: '0' }}>U - Z</p>
-        </AccordionSummary>
+        {accorSum('U', 'Z')}
         <AccordionDetails>
           <GlossaryCard>
             <h2>Volte</h2>

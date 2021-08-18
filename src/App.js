@@ -1,33 +1,46 @@
-import react from "react"
-import Footer from "./components/Footer.jsx"
-import Header from "./components/Header.jsx"
-import Drills from "./components/Drills.jsx"
-import PlayButton from "./components/PlayButton.jsx"
-import ThreeScene from "./components/ThreeScene.jsx"
-import { Button } from "@material-ui/core"
 import Home from "./Home.js"
 import About from "./About.js"
-import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Weapons from "./Weapons.js"
 import Syllabus from "./Syllabus.js"
 import Glossary from "./Glossary.js"
+import { ThemeProvider } from '@material-ui/styles';
+import { createTheme } from '@material-ui/core/styles';
+import Footer from "./components/Footer.jsx"
+
+const theme = createTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#252525',
+      dark: '#252525',
+      contrastText: '#C08FFF'
+    },
+    secondary: {
+      main: '#7000ff',
+      dark: '#252525',
+    },
+  },
+});
 
 function App() {
 
   return (
+
     <Router>
       <div className="App">
-        <Switch>
-          <Route path="/Home" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/weapons" exact component={Weapons} />
-          <Route path="/glossary" exact component={Glossary} />
-          <Route path="/syllabus" exact component={Syllabus} />
+        <ThemeProvider theme={theme}>
+          <Switch>
+            <Route path="/Home" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/weapons" exact component={Weapons} />
+            <Route path="/glossary" exact component={Glossary} />
+            <Route path="/syllabus" exact component={Syllabus} />
 
-        </Switch>
-
+          </Switch>
+        </ThemeProvider>
       </div>
+
     </Router>
 
   );

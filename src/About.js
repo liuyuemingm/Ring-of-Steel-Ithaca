@@ -1,13 +1,17 @@
 import Footer from "./components/Footer.jsx"
-import Header from "./components/Header.jsx"
+import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx"
+import ThreeScene from "./components/ThreeScene.jsx"
+
 
 function About() {
 
   return (
     <>
-      <Header />
-      <h1>About</h1>
-      <Footer />
+      <>
+        <ResponsiveDrawer>
+        </ResponsiveDrawer>
+        <Footer />
+      </>
     </>
   );
 }
