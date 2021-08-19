@@ -1,5 +1,4 @@
 import Home from "./Home.js"
-import About from "./About.js"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Weapons from "./Weapons.js"
 import Syllabus from "./Syllabus.js"
@@ -7,6 +6,7 @@ import Glossary from "./Glossary.js"
 import { ThemeProvider } from '@material-ui/styles';
 import { createTheme } from '@material-ui/core/styles';
 import Footer from "./components/Footer.jsx"
+import Contact from "./Contact.js"
 
 const theme = createTheme({
   palette: {
@@ -21,6 +21,12 @@ const theme = createTheme({
       dark: '#252525',
     },
   },
+  typography: {
+    body1: {
+      fontFamily: 'Alegreya',
+      fontSize: '20px',
+    }
+  }
 });
 
 function App() {
@@ -32,7 +38,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <Switch>
             <Route path="/Home" exact component={Home} />
-            <Route path="/about" exact component={About} />
+            <Route path="/contact" exact component={Contact} />
             <Route path="/weapons" exact component={Weapons} />
             <Route path="/glossary" exact component={Glossary} />
             <Route path="/syllabus" exact component={Syllabus} />

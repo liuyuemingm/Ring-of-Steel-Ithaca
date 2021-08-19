@@ -47,14 +47,32 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
     elevation: 5,
-    backgroundColor: '#222222'
+    backgroundColor: '#222222',
+
   },
   content: {
     flexGrow: 1,
     // width: `calc(100% - ${drawerWidth}px)`,
     // padding: theme.spacing(3),
   },
+  menuBtn: {
+    color: '#C08FFF',
+    position: 'relative',
+    left: '10px',
+    textShadow: '0 0 10px #7000ff',
+  },
+  background: {
+    display: 'none', //remember to change this
+    height: '100vh',
+    position: 'fixed',
+    [theme.breakpoints.down('sm')]: {
+      left: '120px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      left: '-100px',
 
+    },
+  }
 }));
 
 function ResponsiveDrawer(props) {
@@ -72,10 +90,12 @@ function ResponsiveDrawer(props) {
       <div className={classes.toolbar} />
       <Divider />
       <List style={{ position: 'absolute', top: '120px', width: '100%' }}>
-        {['Home', 'Syllabus', 'Weapons', 'Glossary', 'About'].map((text, index) => (
-          <Link to={`../${text}`} key={text} >
+        {['Home', 'Syllabus', 'Weapons', 'Glossary', 'Contact'].map((text, index) => (
+          <Link to={`../${text}`} key={text} style={{
+            textDecoration: 'none'
+          }}>
             <ListItem button >
-              <ListItemText primary={text} />
+              <ListItemText primary={text} className={classes.menuBtn} />
             </ListItem>
             <Divider />
           </Link>
@@ -138,9 +158,8 @@ function ResponsiveDrawer(props) {
             {drawer}
           </Drawer>
         </Hidden>
-      </nav>
-
-      <main className={classes.content}>
+      </nav><main className={classes.content}>
+        <img src='/images/summer1.jpg' className={classes.background} />
         <div className={classes.toolbar} />
         {props.children}
       </main>
