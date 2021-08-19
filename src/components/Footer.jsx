@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <div>
-      <p style={{ position: "fixed", bottom: "0", width: "100%" }}>Copyright &copy; {new Date().getFullYear()} Yueming Liu</p>
+      <p style={{ fontWeight: '100', position: "fixed", bottom: "0", width: "100%", textAlign: 'center', color: 'black' }}>Copyright &copy; {new Date().getFullYear()} Yueming Liu</p>
     </div>
   )
 }
