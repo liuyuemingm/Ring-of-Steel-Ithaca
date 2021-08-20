@@ -31,6 +31,7 @@ const AccordionSummary = withStyles({
 
   root: {
     backgroundColor: '#222222',
+    boxShadow: '0 6px 12px #111111',
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
     marginBottom: -1,
     minHeight: 60,
@@ -134,7 +135,7 @@ export default function CustomizedAccordions() {
   }
 
   return (
-    <div>
+    <div >
       <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         {accorSum('A', 'E')}
         <AccordionDetails>
