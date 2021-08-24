@@ -86,12 +86,12 @@ const useStyles = makeStyles((theme) => ({
     top: '7%',
     left: '91%',
     transform: 'translate(-50%, -50%) ',
-    width: '22%',
+    width: '35%',
     transition: '0.3s',
     '&:hover': {
-      top: '-10%',
+      top: '-8%',
       left: '85%',
-      width: '30%',
+      width: '40%',
       transform: 'rotate(-135deg)'
     },
   },
@@ -101,23 +101,24 @@ const useStyles = makeStyles((theme) => ({
     top: '48%',
     left: '105%',
     transform: 'translate(-50%, -50%) rotate(90deg)',
-    width: '17%',
+    width: '32%',
     transition: '0.3s',
     '&:hover': {
       top: '24%',
-      left: '98%',
-      width: '23%',
+      left: '88%',
+      width: '43%',
       transform: 'rotate(0deg)'
     },
   },
 
-  pupil: {
+  eyeball: {
     position: 'absolute',
     top: '51%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '14%',
-    transition: '0.2s'
+    transition: '0.2s',
+    transformOrigin: '50% 50%'
   }
 
 }));
@@ -127,17 +128,27 @@ function ContactAnimation() {
 
   const classes = useStyles();
   // const ball = document.getElementById('pupil');
-  const ball = useRef(null)
+  const eyeball = useRef(null)
 
   function roll(e) {
-    var x = e.clientX / window.innerWidth * 90 - 45;
-    var y = e.clientY / window.innerHeight * 90 - 45;
-    var deg = Math.abs(x) + Math.abs(y);
+    var clientX = e.clientX;
+    var clientY = e.clientY;
 
-    // ball.left = x;
-    // ball.top = y;
-    ball.current.style.transform = "rotate3d(-" + y + ",-" + x + ",0," + deg + "deg)";
-    console.log(ball.current.style)
+    if (window.innerWidth < 600) {
+      var rotateX = clientX / window.innerWidth - 0.5;
+    } else {
+      var rotateX = (clientX - 200) / (window.innerWidth - 200) - 0.5;
+    }
+
+    var rotateY = -(clientY - 64) / (window.innerHeight - 64) + 0.5;
+    var deg = Math.sqrt((Math.abs(rotateX) + Math.abs(rotateY))) * 45;
+    var translateX = -50 + rotateX * 25 + '%';
+    var translateY = -50 - rotateY * 25 + '%';
+
+
+    eyeball.current.style.transform =
+      "translate(" + translateX + ", " + translateY + ") rotate3d(" + rotateY + "," + rotateX + ",0," + deg + "deg)";
+    console.log(window.innerWidth)
 
   };
 
@@ -149,7 +160,7 @@ function ContactAnimation() {
 
         <img src='/images/contact-ringofsteel.png' className={classes.ring} />
         <img src='/images/contact-eyeframe.png' className={classes.eyeframe} />
-        <img src='/images/contact-pupil.png' className={classes.pupil} ref={ball} />
+        <img src='/images/contact-pupil.png' className={classes.eyeball} ref={eyeball} />
 
         <img src='/images/contact-treasurer.png' className={classes.treasurer} />
         <img src='/images/contact-president.png' className={classes.president} />
