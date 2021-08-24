@@ -212,7 +212,7 @@ function ResponsiveDrawer(props) {
           </Drawer>
         </Hidden>
       </nav><main className={classes.content}>
-        <img src='/images/summer1.jpg' className={classes.background} />
+        {/* <img src='/images/summer1.jpg' className={classes.background} /> */}
         <div className={classes.toolbar} />
         {props.children}
       </main>

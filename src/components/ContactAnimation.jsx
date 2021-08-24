@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useRef } from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import WeaponCard from './WeaponCard'
 import { Paper } from '@material-ui/core';
@@ -116,7 +116,8 @@ const useStyles = makeStyles((theme) => ({
     top: '51%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '14%'
+    width: '14%',
+    transition: '0.2s'
   }
 
 }));
@@ -125,26 +126,30 @@ const useStyles = makeStyles((theme) => ({
 function ContactAnimation() {
 
   const classes = useStyles();
-  // const ball = document.getElementById('pupil').style;
+  // const ball = document.getElementById('pupil');
+  const ball = useRef(null)
 
-  // function roll(e) {
-  //   var x = e.clientX * 10 / window.innerWidth + 45 + "%";
-  //   var y = e.clientY * 10 / window.innerHeight + 45.5 + "%";
+  function roll(e) {
+    var x = e.clientX / window.innerWidth * 90 - 45;
+    var y = e.clientY / window.innerHeight * 90 - 45;
+    var deg = Math.abs(x) + Math.abs(y);
 
-  //   ball.left = x;
-  //   ball.top = y;
-  //   ball.transform = "translate(-" + x + ",-" + y + ")";
+    // ball.left = x;
+    // ball.top = y;
+    ball.current.style.transform = "rotate3d(-" + y + ",-" + x + ",0," + deg + "deg)";
+    console.log(ball.current.style)
 
-  // };
-  // onMouseMove={(e) => roll(e)}
+  };
+
+
 
   return (
-    <div className={classes.root} id='root'>
+    <div className={classes.root} id='root' onMouseMove={(e) => roll(e)} >
       <div className={classes.body}>
 
         <img src='/images/contact-ringofsteel.png' className={classes.ring} />
         <img src='/images/contact-eyeframe.png' className={classes.eyeframe} />
-        <img src='/images/contact-pupil.png' className={classes.pupil} id='pupil' />
+        <img src='/images/contact-pupil.png' className={classes.pupil} ref={ball} />
 
         <img src='/images/contact-treasurer.png' className={classes.treasurer} />
         <img src='/images/contact-president.png' className={classes.president} />

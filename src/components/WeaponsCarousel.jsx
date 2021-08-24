@@ -38,7 +38,7 @@ function WeaponsCarousel() {
         <WeaponCard path="/images/weapon-rapier1.jpg" style={{ gridRowEnd: '8 span' }} name='Rapier' fights=' Beginners Fight ' link='https://wiki.ringithaca.org/index.php?title=Beginner%27s_Fight' />
         <WeaponCard path="/images/weapon-broadsword1.jpg" style={{ gridRowEnd: '9 span' }} name='Broadsword' fights=' Basic Broadsword ' link='https://wiki.ringithaca.org/index.php?title=Basic_Broadsword' />
         <WeaponCard path="/images/weapon-Hunting-Sword-with-Scabbard.jpg" style={{ gridRowEnd: '9 span' }} name='Hunting Sword with Scabbard' />
-        <WeaponCard path="/images/weapon-rapier-made-in1490.jpg" style={{ gridRowEnd: '6 span' }} name='Rapier' description='It was made in 1940' />
+        <WeaponCard path="/images/weapon-rapier-made-in1490.jpg" style={{ gridRowEnd: '6 span' }} name='Rapier' description='It was made in 1490' />
         <WeaponCard path="/images/weapon-Broadsword-detail-of-hilt.jpg" style={{ gridRowEnd: '8 span' }} name='Broadsword' description='Detail of the hilt' />
         <WeaponCard path="/images/weapon-Shield-of-Henry-II-of-France-(reigned-1547–59).jpg" style={{ gridRowEnd: '5 span' }} name='Shield of Henry II of France' />
         <WeaponCard path="/images/weapon-The-Stockbridge-Cup.jpg" style={{ gridRowEnd: '6 span' }} name='Stockbridge Cup' description='Not shield nor cup, it is a plate' />
