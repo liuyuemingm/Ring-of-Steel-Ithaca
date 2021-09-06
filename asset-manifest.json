@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/Ring-of-Steel-Ithaca/static/js/main.87a8ab06.chunk.js",
-    "main.js.map": "/Ring-of-Steel-Ithaca/static/js/main.87a8ab06.chunk.js.map",
+    "main.js": "/Ring-of-Steel-Ithaca/static/js/main.8bea652d.chunk.js",
+    "main.js.map": "/Ring-of-Steel-Ithaca/static/js/main.8bea652d.chunk.js.map",
     "runtime-main.js": "/Ring-of-Steel-Ithaca/static/js/runtime-main.c9fdea56.js",
     "runtime-main.js.map": "/Ring-of-Steel-Ithaca/static/js/runtime-main.c9fdea56.js.map",
-    "static/js/2.42048520.chunk.js": "/Ring-of-Steel-Ithaca/static/js/2.42048520.chunk.js",
-    "static/js/2.42048520.chunk.js.map": "/Ring-of-Steel-Ithaca/static/js/2.42048520.chunk.js.map",
+    "static/js/2.50f710eb.chunk.js": "/Ring-of-Steel-Ithaca/static/js/2.50f710eb.chunk.js",
+    "static/js/2.50f710eb.chunk.js.map": "/Ring-of-Steel-Ithaca/static/js/2.50f710eb.chunk.js.map",
     "static/js/3.76621042.chunk.js": "/Ring-of-Steel-Ithaca/static/js/3.76621042.chunk.js",
     "static/js/3.76621042.chunk.js.map": "/Ring-of-Steel-Ithaca/static/js/3.76621042.chunk.js.map",
     "index.html": "/Ring-of-Steel-Ithaca/index.html",
-    "static/js/2.42048520.chunk.js.LICENSE.txt": "/Ring-of-Steel-Ithaca/static/js/2.42048520.chunk.js.LICENSE.txt"
+    "static/js/2.50f710eb.chunk.js.LICENSE.txt": "/Ring-of-Steel-Ithaca/static/js/2.50f710eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c9fdea56.js",
-    "static/js/2.42048520.chunk.js",
-    "static/js/main.87a8ab06.chunk.js"
+    "static/js/2.50f710eb.chunk.js",
+    "static/js/main.8bea652d.chunk.js"
   ]
 }
