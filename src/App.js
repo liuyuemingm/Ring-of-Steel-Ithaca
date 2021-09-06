@@ -1,5 +1,5 @@
 import Home from "./Home.js"
-import { HashRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Weapons from "./Weapons.js"
 import Syllabus from "./Syllabus.js"
 import Glossary from "./Glossary.js"
@@ -33,11 +33,11 @@ function App() {
 
   return (
 
-    <Router>
+    <Router basename="/react">
       <div className="App">
         <ThemeProvider theme={theme}>
           <Switch>
-            <Route path="/Home" exact component={Home} />
+            <Route path="/" exact component={Home} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/weapons" exact component={Weapons} />
             <Route path="/glossary" exact component={Glossary} />
