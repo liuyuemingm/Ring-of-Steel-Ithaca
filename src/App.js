@@ -1,5 +1,5 @@
 import Home from "./Home.js"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { HashRouter as Router, Route, Switch } from "react-router-dom"
 import Weapons from "./Weapons.js"
 import Syllabus from "./Syllabus.js"
 import Glossary from "./Glossary.js"
