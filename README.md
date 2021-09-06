@@ -1,3 +1,6 @@
+# Ring of Steel Ithaca
+This project is built for the stage combat club Ring of Steel Ithaca, with the purpose of making the club information more accessible (and fun!) for the members and anyone interested. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
