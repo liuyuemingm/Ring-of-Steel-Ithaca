@@ -7,7 +7,6 @@ import { ThemeProvider } from '@material-ui/styles';
 import { createTheme } from '@material-ui/core/styles';
 import Footer from "./components/Footer.jsx"
 import Contact from "./Contact.js"
-import Landing from "./Landing"
 
 const theme = createTheme({
   palette: {
@@ -34,11 +33,10 @@ function App() {
 
   return (
 
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="App">
         <ThemeProvider theme={theme}>
           <Switch>
-            <Route path="/" exact component={Landing} />
             <Route path="/home" exact component={Home} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/weapons" exact component={Weapons} />
