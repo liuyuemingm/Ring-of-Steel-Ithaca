@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Title } from '@material-ui/icons';
+import { Opacity, Title } from '@material-ui/icons';
 import Tilt from 'react-vanilla-tilt';
 
 const appHeight = 64;
@@ -106,18 +106,18 @@ function Introduction() {
           a theatrical combat and stunt troupe based out of Ann Arbor, Michigan.
         </p>
         <p className={classes.intro}>
-          We are an
-          association that seeks to perform safe, effective fights
+          We are an association that seeks to perform safe, effective fights
           in a manner that advances the story told in a theatrical/film
-          production. We aim to provide performers, choreography,
-          and/or training to organizations or individuals that seek them.
+          production.
         </p>
         <p className={classes.intro}>
           Our training encompasses both armed and unarmed techniques
           as well as elementary stunt work, always stressing safety in
           performance, artistry in choreography, and effective portrayal
           of character through combative scenes.</p>
-
+        <p style={{ textAlign: 'right', padding: '0 10px 5px', opacity: '0.3' }}>
+          Photo by U'Ming | 2020 Summer @ Risley
+        </p>
       </div>
     </div >
   )

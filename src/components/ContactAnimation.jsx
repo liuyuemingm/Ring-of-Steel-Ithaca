@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     top: '55%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    maxWidth: '60vw'
   },
 
   eyeframe: {
@@ -199,7 +200,6 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
 function ContactAnimation() {
 
   const classes = useStyles();
@@ -221,14 +221,11 @@ function ContactAnimation() {
     var translateX = -50 + rotateX * 45 + '%';
     var translateY = -51 - rotateY * 45 + '%';
 
-
     eyeball.current.style.transform =
       "translate(" + translateX + ", " + translateY + ") rotate3d(" + rotateY + "," + rotateX + ",0," + deg + "deg)";
     console.log(window.innerWidth)
 
   };
-
-
 
   return (
     <div className={classes.root} id='root' onMouseMove={(e) => roll(e)} >
@@ -256,7 +253,6 @@ function ContactAnimation() {
           </p>
         </div>
 
-
         <div className={classes.campusgroupsContainer}>
           <img src='/images/contact-campusgroups.png' className={classes.campusgroups} />
           <a className={classes.link} href='https://cornell.campusgroups.com/ROSI/club_signup' target="_blank" rel="noopener noreferrer">
@@ -268,8 +264,6 @@ function ContactAnimation() {
           </a>
         </div>
 
-
-
         <div className={classes.vicepresidentContainer}>
           <img src='/images/contact-vicepresident.png' className={classes.vicepresident} />
           <a className={classes.link} href='https://www.linkedin.com/in/yueming-liu-9aba84196/' target="_blank" rel="noopener noreferrer">
@@ -280,7 +274,6 @@ function ContactAnimation() {
             </p>
           </a>
         </div>
-
 
         <div className={classes.armorerContainer}>
           <img src='/images/contact-armorer.png' className={classes.armorer} />

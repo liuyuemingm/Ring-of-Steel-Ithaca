@@ -17,7 +17,7 @@ class ThreeScene extends Component {
 
     //Add Renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setClearColor("#e4dce4");
+    this.renderer.setClearColor("#222222");
     this.renderer.setSize(500, 500);
     this.mount.appendChild(this.renderer.domElement);
     console.log(this)

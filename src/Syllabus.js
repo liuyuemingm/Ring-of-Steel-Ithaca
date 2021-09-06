@@ -14,6 +14,7 @@ function Syllabus() {
     <>
       <ResponsiveDrawer>
       </ResponsiveDrawer>
+      <ThreeScene />
       <Footer />
     </>
   );
