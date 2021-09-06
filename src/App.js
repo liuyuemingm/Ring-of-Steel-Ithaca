@@ -33,11 +33,11 @@ function App() {
 
   return (
 
-    <Router basename="/react">
+    <Router>
       <div className="App">
         <ThemeProvider theme={theme}>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/home" exact component={Home} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/weapons" exact component={Weapons} />
             <Route path="/glossary" exact component={Glossary} />
